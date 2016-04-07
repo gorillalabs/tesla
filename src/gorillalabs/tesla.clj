@@ -12,6 +12,7 @@
     [gorillalabs.tesla.component.health :as health]
     [gorillalabs.tesla.component.quartzite :as quartzite]
     [gorillalabs.tesla.component.mongo :as mongo]
+    [gorillalabs.tesla.component.titan :as titan]
     ))
 
 (defn wait! [conf]
@@ -32,6 +33,7 @@
        ;       :httpkit    #'httpkit/httpkit
        ;       :quartzite  #'quartzite/quartzite
        ;       :mongo      #'mongo/mongo
+       ;       :titan     #'titan/graph
        }]
 
   (defn default-components

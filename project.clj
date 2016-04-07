@@ -48,7 +48,14 @@
                  ;; mongo
                  [com.novemberain/monger "3.0.2"]
 
+
+                 ;; titan
+                 [clojurewerkz/titanium "1.0.0-beta3-SNAPSHOT"]
+                 [com.thinkaurelius.titan/titan-cassandra "1.0.0"]
+                 [com.thinkaurelius.titan/titan-lucene "1.0.0"]
                  ]
+  
+  
 
   ;;  :filespecs [{:type :paths :paths ["test-utils"]}]
 
