@@ -21,7 +21,7 @@
   (if graph
     (do
       (log/info "<- stopping titan")
-      (tg/shutdown graph))
+      (tg/close graph))
     (log/info "<- titan not running")))
 
 
