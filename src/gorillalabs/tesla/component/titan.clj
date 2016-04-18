@@ -6,14 +6,14 @@
    [mount.core :as mnt]))
 
 (defn titan-config [config]
-  {"storage.backend"  "cassandrathrift"
-   "index.search.backend" "lucene"
-   "index.search.directory" "/tmp/searchIndex"
-   })
+  (merge {"storage.backend"  "cassandrathrift"
+          "index.search.backend" "lucene"
+          "index.search.directory" "/tmp/searchIndex"}
+         config))
 
 (defn- start []
   (log/info "-> starting titan")
-  (let [server-config (titan-config config/configuration)
+  (let [server-config (titan-config (:titan config/configuration))
         graph (tg/open server-config)]
     graph))
 
