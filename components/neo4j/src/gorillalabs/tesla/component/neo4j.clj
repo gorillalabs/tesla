@@ -1,9 +1,8 @@
-(ns gorillalabs.tesla.component.neo4j)
-
-(:require [neo4j-clj.core :as neo4j]
-  [clojure.tools.logging :as log]
-  [gorillalabs.tesla.component.configuration :as config]
-  [mount.core :as mnt])
+(ns gorillalabs.tesla.component.neo4j
+    (:require [neo4j-clj.core :as neo4j]
+      [clojure.tools.logging :as log]
+      [gorillalabs.tesla.component.configuration :as config]
+      [mount.core :as mnt]))
 
 (defn- start []
        (let [url (config/config config/configuration [:neo4j :url])
