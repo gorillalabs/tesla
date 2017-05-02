@@ -3,4 +3,4 @@
             :modules {:parent "../.."}
             :description "A logastash component"
 
-            :dependencies [[com.taoensso/timbre "4.6.0"]])
+            :dependencies [[com.taoensso/timbre "4.10.0"]])

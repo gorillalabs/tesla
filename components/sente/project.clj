@@ -3,4 +3,4 @@
             :modules {:parent "../.."}
             :description "sente websocket component"
             :dependencies [[gorillalabs.tesla/core :version]
-                           [com.taoensso/sente "1.9.0"]])
+                           [com.taoensso/sente "1.11.0"]])
