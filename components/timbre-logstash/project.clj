@@ -4,4 +4,6 @@
   :description "A logastash component"
 
   :dependencies [[com.taoensso/timbre "4.10.0"]
-                 [gorillalabs.tesla/core :version]])
+                 [gorillalabs.tesla/core :version]
+                 [commons-codec "1.10"]
+                 ])
