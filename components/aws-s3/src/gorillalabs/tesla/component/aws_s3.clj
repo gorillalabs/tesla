@@ -22,14 +22,14 @@
     (atom {:credentials credentials})))
 
 (defn store-object!
-   "Stores the object in the object store and returns the generated/provided key. Object can either be an InputStream, a string or a file."
+  "Stores the object in the object store and returns the generated/provided key. Object can either be an InputStream, a string or a file."
   ([bucket-name store-object]
-   (let [key (.toString (java.util.UUID/randomUUID))])
-    (store-object! bucket-name key store-object))
-  ([bucket-name key store-object]
-   (let [e-tag (.getETag (s3/put-object (:credentials @store) bucket-name key store-object))]
-    (log/infof "Uploaded object with key %s and etag %s." key e-tag)
-    key)))
+   (let [object-key (.toString (java.util.UUID/randomUUID))]
+     (store-object! bucket-name object-key store-object)))
+  ([bucket-name object-key store-object]
+   (let [e-tag (.getETag (s3/put-object (:credentials @store) bucket-name object-key store-object))]
+     (log/infof "Uploaded object with key %s and etag %s." object-key e-tag)
+     object-key)))
 
 (defn object-exists? [bucket-name object-key]
   (s3/object-exists? (:credentials @store) bucket-name object-key))
