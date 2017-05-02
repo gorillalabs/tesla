@@ -5,6 +5,6 @@
 
             :dependencies [[gorillalabs.tesla/core :version]
                            [com.taoensso/timbre "4.6.0"]
-                           [neo4j-clj "0.3.1-SNAPSHOT"]
+                           [gorillalabs/neo4j-clj "0.3.1-SNAPSHOT"]
                            ])
 
