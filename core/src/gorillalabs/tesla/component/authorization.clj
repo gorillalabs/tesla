@@ -2,7 +2,7 @@
   (:require [mount.core :as mnt]
             [clojure.tools.logging :as log]
             [gorillalabs.tesla.component.configuration :as config]
-            [buddy.sign.jwe :as jwe]
+            [buddy.sign.jwt :as jwt]
             [clj-time.core :refer [hours from-now]]
             [buddy.auth.backends.token :as auth]
             [buddy.core.hash :as hash]
@@ -49,7 +49,7 @@
       (if valid?
         (let [claims {:user (keyword username)
                       :exp  (-> 3 hours from-now)}]
-          (jwe/encrypt claims (:secret authorization) (:options authorization)))))))
+          (jwt/encrypt claims (:secret authorization) (:options authorization)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; lifecycle functions
