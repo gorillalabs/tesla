@@ -10,7 +10,7 @@
 
 (defn merge-sub-config [defaults key sub-overrides]
   (if (map? sub-overrides)
-    (assoc defaults key (merge (get defaults key) sub-overrides))
+    (update-in defaults [key] merge sub-overrides)
     (assoc defaults key sub-overrides)))
 
 (defn merge-config [defaults overrides]

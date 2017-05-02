@@ -20,7 +20,7 @@
       (catch Exception e (log/error e)))))
 
 
-(let [default-components
+(let [default-components*
       {:config     #'config/configuration
        :keep-alive #'keep-alive/keep-alive
        :app-status #'appstate/appstate
@@ -35,9 +35,9 @@
 
   (defn default-components
     ([]
-     default-components)
+     default-components*)
     ([key]
-     (default-components key)))
+     (default-components* key)))
 
 
   (defn stop []
