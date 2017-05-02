@@ -3,4 +3,4 @@
             :modules {:parent "../.."}
             :description "A mongo component"
             :dependencies [[com.novemberain/monger "3.1.0"]
-                           ])
+                           [gorillalabs.tesla/core :version]])

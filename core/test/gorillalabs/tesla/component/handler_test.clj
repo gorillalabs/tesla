@@ -1,5 +1,6 @@
 (ns gorillalabs.tesla.component.handler-test
-  (:require [gorillalabs.tesla.component.handler :refer :all])
+  (:require [clojure.test :refer :all]
+            [gorillalabs.tesla.component.handler :refer :all])
   )
 
 
