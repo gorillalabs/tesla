@@ -11,7 +11,7 @@
 
 
                            ;; Logging
-                           [org.clojure/tools.logging :version]
+                           [org.clojure/tools.logging "0.4.0"]
                            [org.slf4j/slf4j-api "1.7.21"]
                            [org.slf4j/log4j-over-slf4j "1.7.21"]
                            [ch.qos.logback/logback-core "1.1.7"]
