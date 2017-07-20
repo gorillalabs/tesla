@@ -1,4 +1,4 @@
-(defproject gorillalabs.tesla/core "0.4.55-SNAPSHOT"
+(defproject gorillalabs.tesla/core "0.4.56"
             :plugins [[lein-modules "0.3.11"]]
             :description "basic microservice."
             :dependencies [[mount "0.1.10"]
@@ -11,7 +11,7 @@
 
 
                            ;; Logging
-                           [org.clojure/tools.logging :version]
+                           [org.clojure/tools.logging "0.4.0"]
                            [org.slf4j/slf4j-api "1.7.21"]
                            [org.slf4j/log4j-over-slf4j "1.7.21"]
                            [ch.qos.logback/logback-core "1.1.7"]
@@ -39,7 +39,13 @@
                            ;; metrics
                            [metrics-clojure "2.6.1"]
                            [metrics-clojure-graphite "2.6.1"]
-                           [io.riemann/metrics3-riemann-reporter "0.4.2"]]
+                           [io.riemann/metrics3-riemann-reporter "0.4.2"]
+
+                           ;; telemetry
+                           [org.clojure/core.async "0.3.442"]
+                           [riemann-clojure-client "0.4.5"]
+                           [io.riemann/riemann-java-client "0.4.5"]
+                           ]
 
 
             :exclusions [org.clojure/clojure
