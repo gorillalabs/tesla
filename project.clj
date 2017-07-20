@@ -1,5 +1,6 @@
-(defproject gorillalabs/tesla "0.4.55-SNAPSHOT"
+(defproject gorillalabs/tesla "0.4.57-SNAPSHOT"
   :description "basic microservice."
+  :vcs :git
   :plugins [[lein-modules "0.3.11"]
             [lein-pprint "1.1.1"]]
   :modules {:dirs       ["core/" "components/mongo" "components/titan/" "components/quartzite/" "components/sente/" "components/timbre-logstash" "components/aws-s3" "components/amqp" "components/neo4j"]
@@ -13,8 +14,8 @@
                                                org.slf4j/slf4j-nop
                                                org.slf4j/slf4j-log4j12
                                                log4j
-                                               commons-logging/commons-logging]
-                         }
+                                               commons-logging/commons-logging]}
+                         
             :versions   {org.clojure/clojure       "1.8.0"
                          org.clojure/tools.logging "0.3.1"}}
 
@@ -34,9 +35,9 @@
                                       [lein-ancient "0.6.8"  :exclusions [org.clojure/clojure]]
                                       [lein-marginalia "0.9.0"]
                                       [lein-kibit "0.1.2"]
-                                      [jonase/eastwood "0.2.3"  :exclusions [org.clojure/clojure]]
-                                      ]
-                       }}
+                                      [jonase/eastwood "0.2.3"  :exclusions [org.clojure/clojure]]]}}
+                                      
+                       
 
   :release-tasks [["vcs" "assert-committed"]
                   ["change" "version" "leiningen.release/bump-version" "release"]
