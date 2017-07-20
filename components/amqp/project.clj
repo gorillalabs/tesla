@@ -1,4 +1,4 @@
-(defproject gorillalabs.tesla/amqp "0.5.0"
+(defproject gorillalabs.tesla/amqp "0.5.1-SNAPSHOT"
             :plugins [[lein-modules "0.3.11"]]
             :modules {:parent "../.."}
             :description "A component to connect to amqp queues and exchanges."
