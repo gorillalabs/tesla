@@ -50,7 +50,7 @@
 
   (defn start [custom-components & [more]]
     (log/info "-> Starting system")
-    (apply mnt/start-with-args (or more {}) (concat (vals default-components) (vals custom-components)))
+    (apply mnt/start-with-args (or more {}) (concat (vals default-components*) (vals custom-components)))
     (doseq [sig ["INT" "TERM"]]
       (reset! (beckon/signal-atom sig)
               #{stop}))))
