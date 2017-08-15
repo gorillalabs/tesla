@@ -1,4 +1,4 @@
-(defproject gorillalabs.tesla/core "0.5.3-SNAPSHOT"
+(defproject gorillalabs.tesla/core "0.5.3"
   :plugins [[lein-modules "0.3.11"]]
   :description "basic microservice."
   :modules {:parent ".."}
