@@ -16,7 +16,7 @@
         credentials  (cfg :credentials)]
     (log/info "Creating configured buckets")
     (doseq [bucket-name bucket-names]
-      (when-not (some #(= % bucket-name) (s3/list-buckets credentials))
+      (when-not (some #(= % bucket-name) (map :name (s3/list-buckets credentials)))
         (log/infof "Creating bucket %s in object storage." bucket-name)
         (s3/create-bucket credentials bucket-name)))
     (atom {:credentials credentials})))
