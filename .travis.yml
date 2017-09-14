@@ -1,6 +1,5 @@
 language: clojure
-lein: lein2
-script: lein2 modules do check, test, install
+script: lein monolith do check, test, install
 jdk:
 - oraclejdk8
 notifications:
