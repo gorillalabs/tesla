@@ -1,7 +1,6 @@
-(ns gorillalabs.tesla.component.httpkit-test
+(ns gorillalabs.tesla.http.httpkit-test
   (:require [clojure.test :refer :all]
-            [gorillalabs.tesla.component.httpkit :refer :all]
-            [gorillalabs.tesla.component.configuration :as config]))
+            [gorillalabs.tesla.http.httpkit :refer :all]))
 
 
 (deftest test-server-config

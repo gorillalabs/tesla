@@ -2,7 +2,7 @@
   (:require [clojure.test :refer :all]
             [gorillalabs.tesla.component.health :as health]
             [gorillalabs.tesla :as system]
-            [gorillalabs.tesla.component.handler :as handler]
+            [gorillalabs.tesla.http.handler :as handler]
             [ring.mock.request :as mock]))
 
 ;

@@ -1,9 +1,8 @@
-(ns gorillalabs.tesla.component.httpkit
+(ns gorillalabs.tesla.http.httpkit
   (:require [bidi.ring :as br]
             [org.httpkit.server :as httpkit]
             [clojure.tools.logging :as log]
             [gorillalabs.tesla.component.configuration :as config]
-            [gorillalabs.tesla.component.handler :as handler]
             ))
 
 (defmacro condasit->

@@ -8,7 +8,6 @@
     [gorillalabs.tesla.component.configuration :as config]
     [gorillalabs.tesla.component.metrics :as metrics]
     [gorillalabs.tesla.component.keep-alive :as keep-alive]
-    [gorillalabs.tesla.component.handler :as handler]
     [gorillalabs.tesla.component.health :as health]
     ))
 
@@ -26,8 +25,6 @@
        :app-status #'appstate/appstate
        :health     #'health/health
        :metrics    #'metrics/metrics
-       :handler    #'handler/handler
-       ;       :httpkit    #'httpkit/httpkit
        ;       :quartzite  #'quartzite/quartzite
        ;       :mongo      #'mongo/mongo
        ;       :titan     #'titan/graph

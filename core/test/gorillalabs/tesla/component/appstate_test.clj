@@ -87,18 +87,15 @@
 
 
 (deftest should-handle-http-requests
-  (let [create-appstate #'appstate/create-appstate
-        create-handler #'appstate/create-handler
-        ]
-    (testing "it should return a http response"
-      (let [appstate (create-appstate)
-            config {}
-            handler (create-handler appstate config)
-            response (handler (mock/request :get "/status"))
-            ]
+         (testing "it should return a http response"
+                  (let [appstate (#'appstate/start)
+                        config {}
+                        handler (appstate/handler appstate config)
+                        response (handler (mock/request :get "/status"))
+                        ]
 
-        (is (map? response))
-        (let [body-map (json/read-json (:body response))]
-          (is (map? body-map))
-          (is (= (:status (:application body-map)) "OK"))
-          )))))
+                       (is (map? response))
+                       (let [body-map (json/read-json (:body response))]
+                            (is (map? body-map))
+                            (is (= (:status (:application body-map)) "OK"))
+                            ))))

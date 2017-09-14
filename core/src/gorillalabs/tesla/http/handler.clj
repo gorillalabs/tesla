@@ -1,4 +1,4 @@
-(ns gorillalabs.tesla.component.handler
+(ns gorillalabs.tesla.http.handler
   (:require [clojure.tools.logging :as log]
             [ring.middleware.defaults :as ring-defaults]
             [ring.middleware.json :refer [wrap-json-response wrap-json-params wrap-json-body]]
