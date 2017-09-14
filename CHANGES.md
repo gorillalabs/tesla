@@ -1,4 +1,12 @@
-## Breaking changes
+# Changelog 
+
+### 0.5.x
+
+Using lein monolith and lein-v to "orchestrate" tesla project, make it usable in IntelliJ/Cursive.
+
+### 0.5.x
+
+Bringing versions back into sync.
 
 ### 0.4.x
 

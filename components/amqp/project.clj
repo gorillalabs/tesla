@@ -1,8 +1,15 @@
-(defproject gorillalabs.tesla/amqp "0.5.3"
-            :plugins [[lein-modules "0.3.11"]]
-            :modules {:parent "../.."}
-            :description "A component to connect to amqp queues and exchanges."
-  :dependencies [[gorillalabs.tesla/core :version]
+(defproject gorillalabs.tesla/amqp "0.0.0"
+  :monolith/inherit true
+  :middleware [leiningen.v/dependency-version-from-scm
+               leiningen.v/version-from-scm
+               leiningen.v/add-workspace-data]
+
+  :plugins
+  [[lein-monolith "1.0.1"]
+   [com.roomkey/lein-v "6.2.0"]
+   ]
+               :description "A component to connect to amqp queues and exchanges."
+  :dependencies [[gorillalabs.tesla/core nil]
                  [com.novemberain/langohr "3.7.0"]
                  [org.xerial.snappy/snappy-java "1.1.2.6"] ;; keep this version
                  [com.taoensso/nippy "2.13.0"]

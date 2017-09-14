@@ -1,9 +1,14 @@
-(defproject gorillalabs.tesla/core "0.5.3"
-  :plugins [[lein-modules "0.3.11"]]
+(defproject gorillalabs.tesla/core "0.0.0"
   :description "basic microservice."
-  :modules {:parent ".."}
+  :monolith/inherit true
+  :middleware [leiningen.v/dependency-version-from-scm
+               leiningen.v/version-from-scm
+               leiningen.v/add-workspace-data]
 
-
+  :plugins
+  [[lein-monolith "1.0.1"]
+   [com.roomkey/lein-v "6.2.0"]
+   ]
 
   :dependencies [[mount "0.1.11"]
                  [gorillalabs/config "1.0.4"]
@@ -15,7 +20,7 @@
 
 
                  ;; Logging
-                 [org.clojure/tools.logging :version]
+[org.clojure/tools.logging "0.4.0"]
                  [org.slf4j/slf4j-api "1.7.25"]
                  [org.slf4j/log4j-over-slf4j "1.7.25"]
                  [ch.qos.logback/logback-core "1.2.3"]
