@@ -1,6 +1,5 @@
 (ns gorillalabs.tesla.component.handler
-  (:require [mount.core :as mnt]
-            [clojure.tools.logging :as log]
+  (:require [clojure.tools.logging :as log]
             [ring.middleware.defaults :as ring-defaults]
             [ring.middleware.json :refer [wrap-json-response wrap-json-params wrap-json-body]]
             [ring.util.response :refer [content-type]]
@@ -19,42 +18,7 @@
 
 
 
-(defmulti process (fn [handler _] handler))
 
-(defn register [handler-component uri handler]
-  (swap! handler-component assoc uri handler))
-
-#_(defn- remove-route*
-    [[route handler & routes] uri]
-    (when route
-      (if (= route uri)
-        (recur routes uri)
-        (conj (remove-route* routes uri) handler route))))
-
-#_(defn remove-route
-    [routes uri]
-    (vec (remove-route* routes uri)))
-
-(defn remove-route
-  [routes uri]
-  (dissoc routes uri))
-
-(defn deregister [handler-component uri]
-  (swap! handler-component remove-route uri))
-
-(defn- start []
-  (log/info "-> starting handler")
-  (atom {}))
-
-(defn- stop [handler]
-  (log/info (str "<- stopping handler " handler)))
-
-
-(declare handler)                                           ;; this is for Cursive IDE to pick up the symbol
-(mnt/defstate ^{:on-reload :noop}
-              handler
-              :start (start)
-              :stop (stop handler))
 
 (defn- exception_caught [& _] {:status 500 :body {:message "Internal error"}})
 
