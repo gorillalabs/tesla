@@ -50,10 +50,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API to this component
 
-(defn healthy [health]
+(defn unlock [health]
       (reset! health true))
 
-(defn unhealthy [health]
+(defn lock [health]
       (reset! health false))
 
 
