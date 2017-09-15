@@ -7,15 +7,14 @@
 
   :plugins
   [[lein-monolith "1.0.1"]
-   [com.roomkey/lein-v "6.2.0"]
-   ]
+   [com.roomkey/lein-v "6.2.0"]]
 
   :dependencies [[mount "0.1.11"]
                  [gorillalabs/config "1.0.4"]
                  [org.clojure/data.json "0.2.6"]
                  [beckon "0.1.1"]
                  [environ "1.1.0"]
-                 [clj-time "0.13.0"]
+                 [clj-time "0.14.0"]
                  [joda-time "2.9.9"]                        ;; fix a version (otherwise we have version clashes)
 
 
@@ -32,18 +31,18 @@
 
                  ;; Authentication
                  [ring/ring-json "0.4.0"]
-                 [buddy "1.3.0"]
-                 [cheshire "5.7.1"]
-                 [org.clojure/tools.reader "0.10.0"]
+                 [buddy "2.0.0"]
+                 [cheshire "5.8.0"]
+                 [org.clojure/tools.reader "1.1.0"]
 
 
                  ;; io
-                 [ring/ring-core "1.6.0"]
-                 [ring/ring-defaults "0.2.3"]
-                 [bidi "2.0.17"]
+                 [ring/ring-core "1.6.2"]
+                 [ring/ring-defaults "0.3.1"]
+                 [bidi "2.1.2"]
 
                  ;; status
-                 [de.otto/status "0.1.0"]
+                 [de.otto/status "0.1.3"]
 
                  ;; metrics
                  [metrics-clojure "2.9.0"]
@@ -51,7 +50,7 @@
                  [io.riemann/metrics3-riemann-reporter "0.4.5"]
 
                  ;; telemetry
-                 [org.clojure/core.async "0.3.442"]
+                 [org.clojure/core.async "0.3.443"]
                  [riemann-clojure-client "0.4.5"]
                  [io.riemann/riemann-java-client "0.4.5"]
                  ]
