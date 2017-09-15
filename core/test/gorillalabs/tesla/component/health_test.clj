@@ -1,9 +1,9 @@
 (ns gorillalabs.tesla.component.health-test
-  (:require [clojure.test :refer :all]
-            [gorillalabs.tesla.component.health :as health]
-            [gorillalabs.tesla :as system]
-            [gorillalabs.tesla.component.handler :as handler]
-            [ring.mock.request :as mock]))
+    (:require [clojure.test :refer :all]
+      [gorillalabs.tesla.component.health :as health]
+      [gorillalabs.tesla :as system]
+      [gorillalabs.tesla.http.handler :as handler]
+      [ring.mock.request :as mock]))
 
 ;
 ;(defn- serverless-system [runtime-config]

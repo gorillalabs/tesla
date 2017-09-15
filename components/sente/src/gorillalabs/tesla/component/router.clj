@@ -1,4 +1,4 @@
-( ns gorillalabs.tesla.component.router
+(ns gorillalabs.tesla.component.router
   (:require [mount.core :as mnt]
             [clojure.tools.logging :as log]
             [clojure.core.async :as async :refer (<! <!! >! >!! put! chan go go-loop close!)]
@@ -43,8 +43,8 @@
   (let [event-msg-channel (chan)]
     (event-msg-handler event-msg-channel)
     {:event-msg-channel event-msg-channel
-     :events (atom {})
-     :router (sente/start-server-chsk-router! (:ch-recv socket/socket) move-request-to-queue)}))
+     :events            (atom {})
+     :router            (sente/start-server-chsk-router! (:ch-recv socket/socket) move-request-to-queue)}))
 
 (defn- stop [self]
   (log/info "<- Stopping sente router.")
@@ -52,5 +52,5 @@
   (when-let [channel (:event-msg-channel self)] (close! channel)))
 
 (mnt/defstate router
-  :start (start)
-  :stop (stop router))
+              :start (start)
+              :stop (stop router))

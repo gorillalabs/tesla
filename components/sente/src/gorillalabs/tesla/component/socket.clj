@@ -12,7 +12,7 @@
 
 (defn- start [{user-id-fn :user-id-fn :or {user-id-fn default-user-id-fn} :as args}]
   (log/info "-> Starting sente socket w/ " args)
-  (sente/make-channel-socket! (get-sch-adapter) {:packet :edn :user-id-fn user-id-fn }))
+  (sente/make-channel-socket! (get-sch-adapter) {:packet :edn :user-id-fn user-id-fn}))
 
 (defn- stop [self]
   (log/info "<- Stopping sente socket."))

@@ -9,10 +9,10 @@
    [com.roomkey/lein-v "6.2.0"]
    ]
 
-            :description "A component to enable simple access to aws s3 stores."
+  :description "A component to enable simple access to aws s3 stores."
   :dependencies [[gorillalabs.tesla/core nil]
                  [gorillalabs/clj-aws-s3 "0.3.10"]
-                 [org.xerial.snappy/snappy-java "1.1.2.6"] ;; keep this version
-                 [commons-codec "1.10"]  ;; keep this version
-                 [commons-lang "2.6"]  ;; keep this version
+                 [org.xerial.snappy/snappy-java "1.1.2.6"]  ;; keep this version
+                 [commons-codec "1.10"]                     ;; keep this version
+                 [commons-lang "2.6"]                       ;; keep this version
                  ])

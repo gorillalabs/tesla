@@ -14,11 +14,11 @@
                    }
 
  ;;; metrics
- :metrics         {:reporter ;[:console :riemann]
-                   :console  {:interval 10}
-                   :riemann {:host "127.0.0.1"
-                             :port "5555"
-                             :service "tesla-metrics-test"
+ :metrics         {:reporter                                ;[:console :riemann]
+                   :console {:interval 10}
+                   :riemann {:host             "127.0.0.1"
+                             :port             "5555"
+                             :service          "tesla-metrics-test"
                              :interval-seconds 10
                              }
 

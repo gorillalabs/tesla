@@ -15,7 +15,7 @@
 
 (defn- start []
   (let [server-config (titan-config (config/config config/configuration [:titan]))]
-    (log/infof  "-> starting titan (storage @ %s, search index @ %s)"
+    (log/infof "-> starting titan (storage @ %s, search index @ %s)"
                (get server-config "storage.hostname" "[not set]")
                (get server-config "index.search.hostname" "[not set]"))
     (tg/open server-config)))

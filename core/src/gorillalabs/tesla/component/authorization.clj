@@ -1,12 +1,12 @@
 (ns gorillalabs.tesla.component.authorization
-  (:require [mount.core :as mnt]
-            [clojure.tools.logging :as log]
-            [gorillalabs.tesla.component.configuration :as config]
-            [buddy.sign.jwt :as jwt]
-            [clj-time.core :refer [hours from-now]]
-            [buddy.auth.backends.token :as auth]
-            [buddy.core.hash :as hash]
-            ))
+    (:require [mount.core :as mnt]
+      [clojure.tools.logging :as log]
+      [gorillalabs.tesla.component.configuration :as config]
+      [buddy.sign.jwt :as jwt]
+      [clj-time.core :refer [hours from-now]]
+      [buddy.auth.backends.token :as auth]
+      [buddy.core.hash :as hash]
+      ))
 
 
 (declare authorization)
@@ -20,11 +20,11 @@
 ;; internal helper functions
 
 (defn- get-config [key config]
-  (config/config config [:authorization key]))
+       (config/config config [:authorization key]))
 
 (defn- secret [config]
-  (let [secret? (config/config config [:authorization :secret])]
-    (when secret? (hash/sha256 secret?))))
+       (let [secret? (config/config config [:authorization :secret])]
+            (when secret? (hash/sha256 secret?))))
 
 (def options
   (partial get-config :options))
@@ -33,39 +33,39 @@
   (partial get-config :authdata))
 
 (defn- get-state [config]
-  {:secret               (secret config)
-   :options              (options config)
-   :authdata             (authdata config)
-   :unauthorized-handler unauthorized})
+       {:secret               (secret config)
+        :options              (options config)
+        :authdata             (authdata config)
+        :unauthorized-handler unauthorized})
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API to this component
 
 (defn authorize [username password]
-  (let [valid? (some-> (:authdata authorization)
-                       (get-in [(keyword username) :password])
-                       (= password))]
-    (when (and username password)
-      (if valid?
-        (let [claims {:user (keyword username)
-                      :exp  (-> 3 hours from-now)}]
-          (jwt/encrypt claims (:secret authorization) (:options authorization)))))))
+      (let [valid? (some-> (:authdata authorization)
+                           (get-in [(keyword username) :password])
+                           (= password))]
+           (when (and username password)
+                 (if valid?
+                   (let [claims {:user (keyword username)
+                                 :exp  (-> 3 hours from-now)}]
+                        (jwt/encrypt claims (:secret authorization) (:options authorization)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; lifecycle functions
 
 (defn- create-authorization []
-  (let [config config/configuration
-        state (get-state config)]
-    (assoc state :backend (auth/jwe-backend state))))
+       (let [config config/configuration
+             state (get-state config)]
+            (assoc state :backend (auth/jwe-backend state))))
 
 (defn- start []
-  (log/info "-> Starting authorization.")
-  (create-authorization))
+       (log/info "-> Starting authorization.")
+       (create-authorization))
 
 (defn- stop [self]
-  (log/info "<- Stopping authorization")
-  self)
+       (log/info "<- Stopping authorization")
+       self)
 
 (mnt/defstate authorization
               :start (start)

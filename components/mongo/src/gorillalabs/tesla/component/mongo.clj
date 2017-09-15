@@ -16,11 +16,11 @@
   (mg/disconnect mongo)
   )
 
-(declare mongo) ;; this is for Cursive IDE to pick up the symbol ;)
+(declare mongo)                                             ;; this is for Cursive IDE to pick up the symbol ;)
 (mnt/defstate mongo
               :start (start)
               :stop (stop mongo))
 
 (defn getDatabase [name]
-      (mg/get-db mongo name))
+  (mg/get-db mongo name))
 

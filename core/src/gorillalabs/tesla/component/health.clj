@@ -1,11 +1,8 @@
 (ns gorillalabs.tesla.component.health
-  (:require [mount.core :as mnt]
-            [bidi.bidi :as bidi]
-            [clojure.tools.logging :as log]
-            [gorillalabs.tesla.component.configuration :as config]
-            [gorillalabs.tesla.component.handler :as handler]
-            [ring.middleware.defaults :as ring-defaults]
-            ))
+    (:require [mount.core :as mnt]
+      [clojure.tools.logging :as log]
+      [gorillalabs.tesla.component.configuration :as config]
+      ))
 
 
 (declare health)
@@ -23,33 +20,28 @@
                          :body    "UNHEALTHY"})
 
 (defn- health-response [healthy?]
-  (if @healthy?
-    healthy-response
-    unhealthy-response))
+       (if @healthy?
+         healthy-response
+         unhealthy-response))
 
 
+(defn route [config]
+      (config/config config/configuration [:health :path] "/health"))
 
-(defn- handle [request]
-  (health-response health))
+(defn handler [request]
+      (health-response health))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; lifecycle functions
 
 (defn- start []
-  (log/info "-> starting healthcheck.")
-  (let [healthy? (atom true)]
-    (handler/register
-        handler/handler
-        (config/config config/configuration [:health :path] "/health")
-        (handler/wrap-site #'handle))
-    healthy?))
+       (log/info "-> starting healthcheck.")
+       (let [healthy? (atom true)]
+            healthy?))
 
 (defn- stop [self]
-  (log/info "<- stopping Healthcheck")
-  (handler/deregister
-    handler/handler
-    (config/config config/configuration [:health :path] "/health"))
-  self)
+       (log/info "<- stopping Healthcheck")
+       self)
 
 (mnt/defstate health
               :start (start)
@@ -58,11 +50,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API to this component
 
-(defn lock [health]
-  (reset! health true))
-
 (defn unlock [health]
-  (reset! health false))
+      (reset! health true))
+
+(defn lock [health]
+      (reset! health false))
 
 
 
