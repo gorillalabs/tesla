@@ -19,9 +19,7 @@
                 (catch Exception e (log/error e)))))
 
 
-(defn stop-on-signals [signals]
-      (doseq [sig signals]
-             (reset! (beckon/signal-atom sig) #{stop})))
+
 
 
 
@@ -33,6 +31,10 @@
       (wait! config/configuration)
       (log/info "<- Stopping system.")
       (mnt/stop))
+
+(defn stop-on-signals [signals]
+      (doseq [sig signals]
+             (reset! (beckon/signal-atom sig) #{stop})))
 
 (defn start
       ([]
