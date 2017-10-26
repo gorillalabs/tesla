@@ -4,6 +4,8 @@
             [gorillalabs.tesla.component.configuration :as config]
             [mount.core :as mnt]))
 
+(declare graph)
+
 (defn- start []
   (let [url (config/config config/configuration [:neo4j :url])
         user (config/config config/configuration [:neo4j :user])
