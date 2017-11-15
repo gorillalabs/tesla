@@ -26,8 +26,8 @@
                  [ch.qos.logback/logback-classic "1.2.3"]
                  [org.codehaus.janino/janino "3.0.7"]
 
-                 ;; HttpKit
-                 [http-kit "2.2.0"]
+                 ;; Immutant
+                 [org.immutant/web "2.1.9"]
 
                  ;; Authentication
                  [ring/ring-json "0.4.0"]

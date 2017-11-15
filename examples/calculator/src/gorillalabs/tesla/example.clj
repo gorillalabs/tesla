@@ -1,12 +1,11 @@
 (ns gorillalabs.tesla.example
   (:require [gorillalabs.tesla.example.calculating :as calculating]
             [gorillalabs.tesla.example.page :as page]
-
+            [gorillalabs.tesla.http.immutant :as immutant]
             [clojure.tools.logging :as log]
             [gorillalabs.tesla :as tesla]
             [gorillalabs.tesla.component.configuration :as config]
 
-            [gorillalabs.tesla.http.httpkit :as httpkit]
             [gorillalabs.tesla.http.handler :as handler]
             [gorillalabs.tesla.example.page :as page]
             [mount.core :as mnt])
@@ -23,11 +22,11 @@
 
 (defn- start []
   (log/info "-> starting example system.")
-  (httpkit/start (create-handler)))
+  (immutant/start (create-handler)))
 
-(defn- stop [httpkit]
+(defn- stop [server]
   (log/info "<- stopping example system")
-  (httpkit))
+  (immutant/stop server))
 
 (mnt/defstate example
               :start (start)
