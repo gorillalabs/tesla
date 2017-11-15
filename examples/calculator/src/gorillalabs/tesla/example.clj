@@ -5,7 +5,7 @@
             [clojure.tools.logging :as log]
             [gorillalabs.tesla :as tesla]
             [gorillalabs.tesla.component.configuration :as config]
-
+            [bidi.ring]
             [gorillalabs.tesla.http.handler :as handler]
             [gorillalabs.tesla.example.page :as page]
             [mount.core :as mnt])

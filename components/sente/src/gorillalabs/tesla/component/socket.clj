@@ -1,6 +1,6 @@
 (ns gorillalabs.tesla.component.socket
   (:require [taoensso.sente :as sente]
-            [taoensso.sente.server-adapters.http-kit :refer (get-sch-adapter)]
+            [taoensso.sente.server-adapters.immutant :refer (get-sch-adapter)]
             [mount.core :as mnt]
             [clojure.tools.logging :as log]))
 
