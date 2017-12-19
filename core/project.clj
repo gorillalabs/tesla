@@ -10,7 +10,7 @@
    [com.roomkey/lein-v "6.2.0"]]
 
   :dependencies [[mount "0.1.11"]
-                 [gorillalabs/config "1.0.4"]
+                 [gorillalabs/config "1.1.0"]
                  [org.clojure/data.json "0.2.6"]
                  [beckon "0.1.1"]
                  [environ "1.1.0"]
