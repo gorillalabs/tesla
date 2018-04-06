@@ -24,7 +24,7 @@
 
   :plugins [;; essential for the project structure, as we depend on inheritance of project.clj entries
             [lein-monolith "1.0.1"]
-            [com.roomkey/lein-v "6.2.0"]
+            [com.roomkey/lein-v "6.3.0"]
 
             ;; test and documentation
             [lein-codox "0.9.4"]
@@ -35,8 +35,10 @@
             ;; little helpers
             [lein-cljfmt "0.5.7"]
             [lein-cprint "1.2.0"]
-            [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]
-            [lein-update-dependency "0.1.2"]]
+            [lein-ancient "0.6.15" :exclusions [org.clojure/clojure]]
+            [lein-update-dependency "0.1.2"]
+            [lein-environ "1.0.3"]
+            ]
 
   :middleware [leiningen.v/version-from-scm
                leiningen.v/add-workspace-data]

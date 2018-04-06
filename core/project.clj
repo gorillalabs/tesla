@@ -7,14 +7,14 @@
 
   :plugins
   [[lein-monolith "1.0.1"]
-   [com.roomkey/lein-v "6.2.0"]]
+   [com.roomkey/lein-v "6.3.0"]]
 
-  :dependencies [[mount "0.1.11"]
+  :dependencies [[mount "0.1.12"]
                  [gorillalabs/config "1.1.0"]
                  [org.clojure/data.json "0.2.6"]
                  [beckon "0.1.1"]
                  [environ "1.1.0"]
-                 [clj-time "0.14.0"]
+                 [clj-time "0.14.2"]
                  [joda-time "2.9.9"]                        ;; fix a version (otherwise we have version clashes)
 
 
@@ -24,35 +24,35 @@
                  [org.slf4j/log4j-over-slf4j "1.7.25"]
                  [ch.qos.logback/logback-core "1.2.3"]
                  [ch.qos.logback/logback-classic "1.2.3"]
-                 [org.codehaus.janino/janino "3.0.7"]
+                 [org.codehaus.janino/janino "3.0.8"]
 
                  ;; Immutant
-                 [org.immutant/web "2.1.9"]
+                 [org.immutant/web "2.1.10"]
 
                  ;; Authentication
                  [ring/ring-json "0.4.0"]
                  [buddy "2.0.0"]
                  [cheshire "5.8.0"]
-                 [org.clojure/tools.reader "1.1.0"]
+                 [org.clojure/tools.reader "1.2.2"]
 
 
                  ;; io
-                 [ring/ring-core "1.6.2"]
+                 [ring/ring-core "1.6.3"]
                  [ring/ring-defaults "0.3.1"]
-                 [bidi "2.1.2"]
+                 [bidi "2.1.3"]
 
                  ;; status
                  [de.otto/status "0.1.3"]
 
                  ;; metrics
-                 [metrics-clojure "2.9.0"]
-                 [metrics-clojure-graphite "2.9.0"]
-                 [io.riemann/metrics3-riemann-reporter "0.4.5"]
+                 [metrics-clojure "2.10.0"]
+                 [metrics-clojure-graphite "2.10.0"]
+                 [io.riemann/metrics3-riemann-reporter "0.4.6"]
 
                  ;; telemetry
-                 [org.clojure/core.async "0.3.443"]
+                 [org.clojure/core.async "0.4.474"]
                  [riemann-clojure-client "0.4.5"]
-                 [io.riemann/riemann-java-client "0.4.5"]
+                 [io.riemann/riemann-java-client "0.4.6"]
                  ]
 
 
@@ -74,13 +74,6 @@
                                       [org.clojure/tools.namespace "0.2.11"]
                                       [expectations "2.1.9"]
                                       [ring-mock "0.1.5"]]
-                       :plugins      [[lein-pprint "1.1.1"]
-                                      [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]
-                                      [lein-marginalia "0.8.0"]
-                                      [lein-environ "1.0.3"]
-                                      [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
-                                      ]
-
                        :env          {:system "SYSTEM"
                                       :env    "ENV"}}}
   )
