@@ -6,7 +6,6 @@
       [environ.core :as env]
       [gorillalabs.tesla.component.appstate :as appstate]
       [gorillalabs.tesla.component.configuration :as config]
-      [gorillalabs.tesla.component.metrics :as metrics]
       [gorillalabs.tesla.component.keep-alive :as keep-alive]
       [gorillalabs.tesla.component.health :as health]
       ))

@@ -5,8 +5,8 @@
                leiningen.v/add-workspace-data]
 
   :plugins
-  [[lein-monolith "1.0.1"]
-   [com.roomkey/lein-v "6.2.0"]
+  [[lein-monolith "1.4.0"]
+   [com.roomkey/lein-v "7.1.0"]
    ]
   :description "a simple example of an application build with tesla."
   :dependencies [[org.clojure/clojure "1.8.0"]

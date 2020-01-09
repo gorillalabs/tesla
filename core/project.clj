@@ -6,8 +6,8 @@
                leiningen.v/add-workspace-data]
 
   :plugins
-  [[lein-monolith "1.0.1"]
-   [com.roomkey/lein-v "6.2.0"]]
+  [[lein-monolith "1.4.0"]
+   [com.roomkey/lein-v "7.1.0"]]
 
   :dependencies [[mount "0.1.11"]
                  [gorillalabs/config "1.1.0"]

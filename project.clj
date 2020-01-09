@@ -23,25 +23,13 @@
   :deploy-repositories [["releases" :clojars]]
 
   :plugins [;; essential for the project structure, as we depend on inheritance of project.clj entries
-            [lein-monolith "1.0.1"]
-            [com.roomkey/lein-v "6.2.0"]
-
-            ;; test and documentation
-            [lein-codox "0.9.4"]
-            [lein-marginalia "0.9.0"]
-            [lein-kibit "0.1.2"]
-            [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
-
-            ;; little helpers
-            [lein-cljfmt "0.5.7"]
-            [lein-cprint "1.2.0"]
-            [lein-ancient "0.6.8" :exclusions [org.clojure/clojure]]
-            [lein-update-dependency "0.1.2"]]
+            [lein-monolith "1.4.0"]
+            [com.roomkey/lein-v "7.1.0"]]
 
   :middleware [leiningen.v/version-from-scm
                leiningen.v/add-workspace-data]
 
-  :dependencies [[org.clojure/clojure "1.8.0"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]]
 
   :exclusions [org.clojure/clojure
                org.slf4j/slf4j-nop
@@ -74,8 +62,16 @@
 
 
    :project-dirs
-            ["core/" "components/mongo" "components/titan/" "components/quartzite/" "components/sente/" "components/timbre-logstash" "components/aws-s3" "components/amqp" "components/neo4j" "examples/calculator"]
-   }
+            ["core/"
+             #_"components/mongo"
+             #_"components/titan/"
+             #_"components/quartzite/"
+             #_"components/sente/"
+             #_"components/timbre-logstash"
+             #_"components/aws-s3"
+             #_"components/amqp"
+             #_"components/neo4j"
+             "examples/calculator"]}
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Releasing stuff
