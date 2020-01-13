@@ -7,7 +7,7 @@
 
   :plugins
   [[lein-monolith "1.0.1"]
-   [com.roomkey/lein-v "6.2.0"]
+   [com.roomkey/lein-v "6.3.0"]
    ]
   :description "A mongo component"
   :dependencies [[com.novemberain/monger "3.1.0"]
